@@ -1,0 +1,25 @@
+package com.yedam.collect;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+@AllArgsConstructor
+@RequiredArgsConstructor
+public class EmpVO {
+	//필드 선언
+	private int enpno;
+	private String ename;
+	private int dept;
+	
+	//empno, ename 생성자
+	public EmpVO(int enpno, String ename) {
+		this.enpno = enpno;
+		this.ename = ename;
+	}
+}

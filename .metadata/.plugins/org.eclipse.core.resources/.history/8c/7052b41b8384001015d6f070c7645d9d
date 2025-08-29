@@ -1,0 +1,9 @@
+package com.yedam.collect;
+
+public class EmpVO {
+	//필드 선언
+	String enpno;
+	String ename;
+	
+	//empno, ename 생성자
+}

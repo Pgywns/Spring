@@ -1,0 +1,16 @@
+package com.example.demo.emp.web;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class EmpController {
+	
+	@Autowired EmpMapper empMapper; // new X, 객체(빈)가 주입됨
+	@GetMapping("empList")
+	public String empList(Model model) {
+		model.addAttribute("empList", empMapper.selectEmp());
+		return "empList";
+	}
+}

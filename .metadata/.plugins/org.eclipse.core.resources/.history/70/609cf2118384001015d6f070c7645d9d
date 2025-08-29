@@ -1,0 +1,5 @@
+package com.yedam.collect;
+
+public class EmpVO {
+	//필드 선언
+}

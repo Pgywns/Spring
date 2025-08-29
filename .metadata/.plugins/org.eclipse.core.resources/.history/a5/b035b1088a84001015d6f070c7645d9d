@@ -1,0 +1,18 @@
+package com.yedam.collect;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.junit.jupiter.api.Test;
+
+public class ListMapTest {
+	
+	@Test
+	public void test1() {
+		// 테이블 1개 -> VO
+		// 테이블 조인 select -> Map
+		
+		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+	}
+}

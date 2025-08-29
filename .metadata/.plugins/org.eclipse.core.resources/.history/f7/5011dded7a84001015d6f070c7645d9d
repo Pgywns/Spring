@@ -1,0 +1,17 @@
+package com.yedam;
+
+class Score {
+	
+	public void input() {
+		
+	}
+	
+	public void total() {
+		
+	}
+	
+}
+
+public class ExceptionTest {
+
+}

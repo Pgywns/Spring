@@ -1,0 +1,17 @@
+package com.yedam;
+
+import org.junit.jupiter.api.Test;
+
+public class CarTest {
+	
+	@Test
+	public void test() {	
+		Car car1 = Car.getInstance("쏘렌토");
+		Car car2 = Car.getInstance("카니발");
+		
+		car1.drive();
+		car2.drive();
+		
+		System.out.println(car1 == car2);
+	}
+}

@@ -1,0 +1,11 @@
+package com.yedam.collect;
+
+import org.junit.jupiter.api.Test;
+
+public class ListMapTest {
+	
+	@Test
+	public void test1() {
+		
+	}
+}

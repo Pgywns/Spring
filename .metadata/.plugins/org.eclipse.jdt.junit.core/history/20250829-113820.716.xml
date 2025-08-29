@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ListTest" project="java_review" tests="2" started="2" failures="1" errors="0" ignored="0">
+  <testsuite name="com.yedam.collect.ListTest" time="0.016" displayname="ListTest" uniqueid="[engine:junit-jupiter]/[class:com.yedam.collect.ListTest]">
+    <testcase name="test1" classname="com.yedam.collect.ListTest" time="0.01" displayname="test1()" uniqueid="[engine:junit-jupiter]/[class:com.yedam.collect.ListTest]/[method:test1()]"/>
+    <testcase name="test2" classname="com.yedam.collect.ListTest" time="0.006" displayname="test2()" uniqueid="[engine:junit-jupiter]/[class:com.yedam.collect.ListTest]/[method:test2()]">
+      <failure>
+        <expected>2</expected>
+        <actual>3</actual>
+        org.opentest4j.AssertionFailedError: expected: &lt;2&gt; but was: &lt;3&gt;&#13;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)&#13;
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)&#13;
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)&#13;
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)&#13;
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)&#13;
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)&#13;
+	at com.yedam.collect.ListTest.test2(ListTest.java:33)&#13;
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)&#13;
+&#13;
+
+      </failure>
+    </testcase>
+  </testsuite>
+</testrun>

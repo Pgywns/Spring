@@ -1,0 +1,20 @@
+package com.yedam;
+
+import java.util.Scanner;
+
+class Score {
+	
+	public void input() {
+		Scanner scan = new Scanner(System.in);
+		scan.nextInt();l
+	}
+	
+	public void total() {
+		
+	}
+	
+}
+
+public class ExceptionTest {
+
+}

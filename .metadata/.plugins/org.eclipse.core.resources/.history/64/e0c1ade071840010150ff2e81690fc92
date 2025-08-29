@@ -1,0 +1,11 @@
+package com.yedam;
+
+public class CarTest {
+	public static void main(String[] args) {	
+		Car car1 = new Car("카니발");
+		car1.drive();
+		
+		Car car2 = new Car("쏘렌토");
+		car2.drive();
+	}
+}

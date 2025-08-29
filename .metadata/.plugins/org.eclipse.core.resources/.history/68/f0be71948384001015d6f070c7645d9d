@@ -1,0 +1,38 @@
+package com.yedam.collect;
+
+public class EmpVO {
+	//필드 선언
+	int enpno;
+	String ename;
+	String dept;
+	
+	//empno, ename 생성자
+	public EmpVO(int enpno, String ename) {
+		this.enpno = enpno;
+		this.ename = ename;
+	}
+
+	public String getEnpno() {
+		return enpno;
+	}
+
+	public void setEnpno(String enpno) {
+		this.enpno = enpno;
+	}
+
+	public String getEname() {
+		return ename;
+	}
+
+	public void setEname(String ename) {
+		this.ename = ename;
+	}
+	
+	public String getDept() {
+		return dept;
+	}
+
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+}

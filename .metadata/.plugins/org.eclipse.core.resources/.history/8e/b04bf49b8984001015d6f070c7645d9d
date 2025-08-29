@@ -1,0 +1,8 @@
+package com.yedam.collect;
+
+public class ListMapTest {
+	@Test
+	public void test1() {
+		
+	}
+}

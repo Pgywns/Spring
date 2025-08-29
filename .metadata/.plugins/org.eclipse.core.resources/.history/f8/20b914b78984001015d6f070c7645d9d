@@ -1,0 +1,12 @@
+package com.yedam.collect;
+
+import org.junit.jupiter.api.Test;
+
+public class ListMapTest {
+	
+	@Test
+	public void test1() {
+		// 테이블 1개 -> VO
+		// 테이블 조인 select -> VO
+	}
+}

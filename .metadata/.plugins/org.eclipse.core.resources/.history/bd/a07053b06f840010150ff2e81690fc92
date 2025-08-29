@@ -1,0 +1,8 @@
+package com.yedam;
+
+public class Car {
+	String model;
+	public void drive() {
+		System.out.println("운행");
+	}
+}
