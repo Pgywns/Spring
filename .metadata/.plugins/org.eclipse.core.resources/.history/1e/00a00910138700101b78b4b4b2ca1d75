@@ -1,0 +1,24 @@
+package com.example.demo.board.web;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.example.demo.board.mapper.BoardMapper;
+import com.example.demo.board.service.BoardVO;
+import com.example.demo.common.Paging;
+
+@Controller
+public class BoardController {
+	
+	@Autowired BoardMapper boardMapper;
+	
+	@GetMapping("BoardList")
+	public String BoardList(Model model, BoardVO boardVO, Paging paging) {
+		model.addAttribute("boardList", boardMapper.selectBoard(boardVO));
+		boardVO.setFirst(paging.getFirst());
+		boardVO.setLast(paging.getLast());
+		return "boardList";
+	}
+}

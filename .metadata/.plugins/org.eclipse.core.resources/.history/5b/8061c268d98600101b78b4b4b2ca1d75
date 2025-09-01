@@ -1,0 +1,6 @@
+package com.example.demo.emp.mapper;
+
+public class SearchVO {
+	Integer first;
+	Integer last;
+}

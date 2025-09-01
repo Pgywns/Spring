@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.salaryred{color: red};
+</style>
+</head>
+<body>
+<h1>사원 목록</h1>
+<table>
+ <tr>
+	<th>No</th>
+	<th>employee_id</th>
+	<th>first_name</th>
+	<th>last_name</th>
+	<th>salary</th>
+	<th>hire_date</th>
+ </tr>
+<tr th:each="emp, stat : ${empList}">
+	<td th:text="${stat.index}">1</td>
+	<td th:text="${emp.employeeId}"></td>
+	<td th:text="${emp.firstName}"></td>
+	<td th:text="${emp.lastName}"></td>
+	<td th:text="${#numbers.formatDecimal(emp.salary, 3, 'COMMA', 2, 'POINT')}" class="salaryred"></td>
+	<td th:text="${#dates.format(emp.hireDate, 'yyyy-MM')}"></td>
+ </tr>
+</table>
+</body>
+</html>

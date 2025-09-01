@@ -1,0 +1,11 @@
+package com.example.demo.emp.mapper;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+public class SearchVO {
+	Integer first;
+	Integer last;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<script th:inline="javascript">
+	function gopage(p) {
+		frmSearch.page.value = p;
+		frmSearch.submit();
+		//location.href= 'empList?page=' + p
+	}
+	function init() {
+		frmSearch.title.value = ""
+		frmSearch.bno.value = ""
+	}
+</script>
+</head>
+<body>
+<h1>게시판정보</h1>
+
+
+    <table class="table">
+		<tr>
+			<th>No</th>
+			<th>title</th>
+			<th>writer</th>
+			<th>regDate</th>
+			<th>updateDate</th>
+			<th>content</th>
+		</tr>
+		<tr th:each="board : ${boardList}">
+			<td th:text="${board.bno}"></td>
+			<td th:text="${board.title}"></td>
+			<td th:text="${board.writer}"></td>
+			<td th:text="${board.regDate}"></td>
+			<td th:text="${board.updateDate}"></td>
+			<td th:text="${board.content}"></td>
+		</tr>
+	</table>
+	
+</body>
+</html>
