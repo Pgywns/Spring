@@ -23,18 +23,45 @@
 
 <!-- 전체조회 -->
 <select id="selectBoard" resultType="boardVO">
-	SELECT *
-	FROM   (
-	    SELECT /*+INDEX_DESC (TBL_BOARD PK_BOARD)*/
-	    	   ROWNUM RN, T.* 
-	    FROM   TBL_BOARD T
-	    <include refid='criteria'></include>
-	) B
-	WHERE RN BETWEEN #{first} AND #{last}
+	SELECT B.BNO,
+       B.TITLE,
+       B.CONTENT,
+       B.WRITER,
+       B.REGDATE,
+       B.UPDATEDATE,
+       NVL(R.REPLY_CNT, 0) AS REPLYCNT
+FROM (
+    SELECT *
+    FROM (
+        SELECT /*+INDEX_DESC (TBL_BOARD PK_BOARD)*/
+               ROWNUM RN, T.*
+        FROM   TBL_BOARD T
+        <include refid="criteria"/>
+    ) 
+    WHERE RN BETWEEN #{first} AND #{last}
+) B
+LEFT JOIN (
+    SELECT BNO, COUNT(*) AS REPLY_CNT
+    FROM   TBL_REPLY
+    GROUP BY BNO
+) R
+ON B.BNO = R.BNO
 </select>
 
 <!-- 단건조회 -->
-<select id="selectBoardByBno" resultType="replyVO" parameterType="Long">
+<select id="selectBoardByBno" resultType="boardVO" parameterType="Long">
+	SELECT BNO,
+		   TITLE,
+		   CONTENT,
+		   WRITER,
+		   REGDATE,
+		   UPDATEDATE
+	FROM   TBL_BOARD
+	WHERE  BNO = #{bno}
+</select>
+
+<!-- 댓글조회 -->
+<select id="selectReply" resultType="replyVO" parameterType="Long">
 	SELECT RNO,
 		   BNO,
 		   REPLY,
@@ -44,4 +71,11 @@
 	FROM   TBL_REPLY
 	WHERE  BNO = #{bno}
 </select>
+
+<!-- 삭제 -->
+<delete id="deleteBoard" parameterType="Long">
+	DELETE FROM TBL_BOARD
+	WHERE  BNO = #{bno}
+</delete>
+
 </mapper>

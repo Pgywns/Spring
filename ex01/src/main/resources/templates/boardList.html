@@ -31,19 +31,19 @@
     <table class="table">
 		<tr>
 			<th>No</th>
-			<th>title</th>
-			<th>writer</th>
-			<th>regDate</th>
-			<th>updateDate</th>
-			<th>content</th>
+			<th>제목</th>
+			<th>작성자</th>
+			<th>등록일</th>
+			<th>댓글 수</th>
+			<th></th>
 		</tr>
 		<tr th:each="board : ${boardList}">
 			<td th:text="${board.bno}"></td>
-			<td><a th:href="@{/replyList(bno=${board.bno})}" th:text="${board.title}"></a></td>
+			<td><a th:href="@{/board(bno=${board.bno})}" th:text="${board.title}"></a></td>
 			<td th:text="${board.writer}"></td>
-			<td th:text="${board.regDate}"></td>
-			<td th:text="${board.updateDate}"></td>
-			<td th:text="${board.content}"></td>
+			<td th:text="${#dates.format(board.regDate, 'yyyy-MM-dd')}"></td>
+			<td th:text="${board.replyCnt}"></td>
+			<td><button onclick="">삭제</button></td>
 		</tr>
 	</table>
 	

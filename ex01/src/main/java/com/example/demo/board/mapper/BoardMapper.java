@@ -13,5 +13,12 @@ public interface BoardMapper {
 	List<BoardVO> selectBoard(BoardVO boardVO);
 	
 	// 단건조회
-	List<ReplyVO> selectBoardByBno(Long bno);
+	BoardVO selectBoardByBno(Long bno);
+	
+	// 댓글조회
+	List<ReplyVO> selectReply(Long bno);
+	
+	// 삭제
+	int deleteBoard(Long bno);
 }
+
