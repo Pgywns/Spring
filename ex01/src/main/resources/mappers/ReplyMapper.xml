@@ -42,7 +42,7 @@
 <update id="update">
 
 	UPDATE TBL_REPLY SET 
-	       REPLY = #{REPLY},
+	       REPLY = #{reply},
 	       UPDATEDATE = SYSDATE 
 	 WHERE RNO = #{rno}
 

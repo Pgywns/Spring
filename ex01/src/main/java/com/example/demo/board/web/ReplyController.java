@@ -28,7 +28,7 @@ public class ReplyController {
 	
 	// 수정
 	@PutMapping("/reply/{rno}")
-	public int update(@PathVariable ReplyVO vo) {
+	public int update(@RequestBody ReplyVO vo) {
 		int result = replyMapper.update(vo);
 		return result;
 	}
@@ -54,6 +54,5 @@ public class ReplyController {
 	public String get() {
 		return "";
 	}
-	
 	
 }
