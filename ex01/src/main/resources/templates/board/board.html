@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="https://www.thymeleaf.org"
+	  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
   <head>
     <meta charset="UTF-8" />
     <title>Insert title here</title>
@@ -20,6 +22,13 @@
       <tr>
         <td>내용</td>
         <td th:text="${board.content}"></td>
+      </tr>
+      <tr>
+        <td>첨부파일</td>
+        <td>
+        	<a th:href="|/board/filedown/${board.attach}|" th:text="${board.attach}"></a>
+        	<img th:src="|/upload/${board.attach}|" style="width:500px; height:auto;">
+        </td>
       </tr>
       <tr>
         <td>등록일</td>

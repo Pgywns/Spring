@@ -55,7 +55,8 @@ ON B.BNO = R.BNO
 		   CONTENT,
 		   WRITER,
 		   REGDATE,
-		   UPDATEDATE
+		   UPDATEDATE,
+		   ATTACH
 	FROM   TBL_BOARD
 	WHERE  BNO = #{bno}
 </select>
@@ -77,5 +78,23 @@ ON B.BNO = R.BNO
 	DELETE FROM TBL_BOARD
 	WHERE  BNO = #{bno}
 </delete>
+
+<!-- 등록 -->
+<insert id="insertBoard" parameterType="boardVO">
+  INSERT INTO TBL_BOARD (
+      BNO,
+      TITLE,
+      CONTENT,
+      WRITER,
+      ATTACH
+  )
+  VALUES (
+      seq_board.nextval,
+      #{title},
+      #{content},
+      #{writer},
+      #{attach}
+  )
+</insert>
 
 </mapper>

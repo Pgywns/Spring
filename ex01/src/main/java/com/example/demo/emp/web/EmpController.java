@@ -4,30 +4,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.common.Paging;
 import com.example.demo.emp.mapper.EmpMapper;
 import com.example.demo.emp.service.EmpVO;
 
+@RequestMapping("/emp")
 @Controller
 public class EmpController {
 	
 	@Autowired EmpMapper empMapper; // new X, 객체(빈)가 주입됨
 	
-	@GetMapping("empList")
+	@GetMapping("/empList")
 	public String empList(Model model, EmpVO empVO, Paging paging) {
 		paging.setTotalRecord(empMapper.selectCount(empVO));
 		paging.setPageUnit(5);
 		empVO.setFirst(paging.getFirst());
 		empVO.setLast(paging.getLast());
 		model.addAttribute("empList", empMapper.selectEmp(empVO));
-		return "empList"; // empList.html
+		return "/emp/empList"; // empList.html
 	}
 	
-	@GetMapping("emp")
+	@GetMapping("/emp")
 	public String emp(Model model, @RequestParam("employeeId") Long employeeId) {
 		model.addAttribute("emp", empMapper.selectEmpById(employeeId));
-		return "emp"; // emp.html
+		return "/emp/emp"; // emp.html
 	}
 }

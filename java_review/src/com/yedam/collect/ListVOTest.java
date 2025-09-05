@@ -16,8 +16,8 @@ public class ListVOTest {
 	@Test
 	public void test1() {
 		List<EmpVO> list = new ArrayList<>();
-		list.add(new EmpVO(100, "홍길동"));
-		list.add(new EmpVO(100, "홍길동"));
+//		list.add(new EmpVO(100, "홍길동"));
+//		list.add(new EmpVO(100, "홍길동"));
 		
 		// for
 		for (int i = 0; i < list.size(); i++) {
